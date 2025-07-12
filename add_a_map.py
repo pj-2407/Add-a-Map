@@ -44,11 +44,12 @@ class MinecraftMapInstaller(tk.Tk):
         self.browse_button = tk.Button(self.path_frame, text="Browse...", command=self.browse_for_saves_folder,
                                        bg="#2196F3", fg="white", relief="flat")
         self.browse_button.pack(side="right")
-
+        self.switch_language(self.current_language) 
+        
         self.file_path = None
         self.saves_path = None
         self.after(100, self.find_and_set_saves_path) # Defer scanning to allow UI to draw
-
+        
     def drop_inside_entry(self, event):
         """ Handles the drag and drop event. """
         filepath = event.data.strip()
